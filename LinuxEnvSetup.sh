@@ -7,6 +7,7 @@ set -e
 
 echo "Updating system..."
 sudo dnf update -y
+sudo dnf install -y git
 
 echo "Installing core development tools..."
 if ! dnf group list installed | grep -q "Development Tools"; then

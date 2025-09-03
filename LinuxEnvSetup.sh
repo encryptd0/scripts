@@ -5,8 +5,23 @@
 
 set -e
 
+#echo "Checking environment..."
+#os_name=$(hostnamectl | grep "Operating System" | cut -d':' -f2 | awk '{print $1}')
+
+#pkg_mngr=""
+
+#if [[ "$os_name" == "Ubuntu" ]]; then
+#    pkg_mngr=apt
+#elif [[ "$os_name" == "Fedora" ]]; then
+#    pkg_mngr=dnf
+#else
+#    echo "Other Linux distro: $os_name"
+#fi
+
 echo "Updating system..."
 sudo dnf update -y
+
+echo "Installing git..."
 sudo dnf install -y git
 
 echo "Installing core development tools..."
